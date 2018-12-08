@@ -1,0 +1,24 @@
+{
+  "name": "data-structure-algorithms",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mengasis/data-structure-algorithms.git"
+  },
+  "keywords": [
+    "node",
+    "javascript",
+    "algorithms"
+  ],
+  "author": "Manuel Venegas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mengasis/data-structure-algorithms/issues"
+  },
+  "homepage": "https://github.com/mengasis/data-structure-algorithms#readme"
+}
