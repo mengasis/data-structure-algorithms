@@ -25,3 +25,21 @@ function memoSolution() {
     const result = num * factorial(num - 1)
     cache[num] = result
 
+    return result
+  }
+}
+
+function* genSolution(num = 1) {
+  if (num <= 1) return 1
+
+  let result = num
+
+  while (num > 1) {
+    result = --num * result
+    yield result
+  }
+}
+
+const fac = [...genSolution(5)]
+
+console.log(fac)
