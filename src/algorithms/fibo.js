@@ -17,6 +17,11 @@ function simpleSolution(num) {
   return a
 }
 
+//O(2^n)
+function recursiveSolution(num) {
+  return num <= 1 ? 1 : recursiveSolution(num - 1) + recursiveSolution(num - 2)
+}
+
 for (let index = 0; index < 10; index++) {
   console.log(simpleSolution(index))
 }
