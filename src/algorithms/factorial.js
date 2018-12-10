@@ -15,4 +15,13 @@ function recursiveSolution(num) {
   return num <= 1 ? 1 : num * recursiveSolution(num - 1)
 }
 
+function memoSolution() {
+  let cache = {}
+
+  return function factorial(num) {
+    if (num <= 1) return 1
+    if (num in cache) return cache[num]
+
+    const result = num * factorial(num - 1)
+    cache[num] = result
 
