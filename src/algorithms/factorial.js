@@ -10,3 +10,9 @@ function simpleSolution(num) {
 
   return result
 }
+
+function recursiveSolution(num) {
+  return num <= 1 ? 1 : num * recursiveSolution(num - 1)
+}
+
+
