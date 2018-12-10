@@ -31,6 +31,23 @@ function memoizationSolution(num, cache) {
   return memoizationSolution(num - 1, cache) + memoizationSolution(num - 2, cache)
 }
 
+function closureMemoizationSolution() {
+  let cache = {}
+
+  return function fib(num) {
+    if (cache[num]) return cache[num]
+
+    if (num <= 1) return 1
+
+    const result = fib(num - 1) + fib(num - 2)
+    cache[num] = result
+
+    return result
+  }
+}
+
+const fibo = closureMemoizationSolution()
+
 for (let index = 0; index < 10; index++) {
   console.log(simpleSolution(index))
 }
