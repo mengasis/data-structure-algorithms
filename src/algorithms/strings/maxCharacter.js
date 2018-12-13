@@ -1,6 +1,6 @@
 //Return the character that appears the most often.
 
-function maxCharacter(string = '') {
+function getMaxCharacter(string = '') {
   let mapModa = {}
 
   for (const character of string.split('')) {
@@ -16,4 +16,4 @@ function maxCharacter(string = '') {
   })[0]
 }
 
-module.exports = { maxCharacter }
+module.exports = { getMaxCharacter }
