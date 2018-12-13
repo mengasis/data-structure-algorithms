@@ -28,3 +28,11 @@ describe('Anagram', () => {
     expect(strings.isAnagram('hola', 'holis')).not.toBeTruthy()
   })
 })
+
+describe('Count Vowels', () => {
+  test('Should count vowels to string', () => {
+    expect(strings.countVowels('hello world')).toEqual(3)
+    expect(strings.countVowels('ooooaaahh!')).toEqual(7)
+    expect(strings.countVowels('pfspfs')).toEqual(0)
+  })
+})
