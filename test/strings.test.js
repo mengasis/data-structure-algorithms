@@ -20,3 +20,11 @@ describe('Max Character', () => {
     expect(strings.getMaxCharacter('How are you?')).toEqual('o')
   })
 })
+
+describe('Anagram', () => {
+  test('Should check if it is anagram', () => {
+    expect(strings.isAnagram('The alias men', 'Alan Smithee')).toBeTruthy()
+    expect(strings.isAnagram('hello world', 'world hello')).toBeTruthy()
+    expect(strings.isAnagram('hola', 'holis')).not.toBeTruthy()
+  })
+})
