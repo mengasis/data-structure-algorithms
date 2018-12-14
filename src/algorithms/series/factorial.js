@@ -40,6 +40,4 @@ function* genSolution(num = 1) {
   }
 }
 
-const fac = [...genSolution(5)]
-
-console.log(fac)
+module.exports = { iterativeSolution, recursiveSolution, memoSolution, genSolution }
