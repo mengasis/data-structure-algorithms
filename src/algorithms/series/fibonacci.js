@@ -19,7 +19,8 @@ function iterativeSolution(num) {
 
 //O(2^n)
 function recursiveSolution(num) {
-  return num < 1 ? num : recursiveSolution(num - 1) + recursiveSolution(num - 2)
+  if (num === 0) return 0
+  return num <= 1 ? 1 : recursiveSolution(num - 1) + recursiveSolution(num - 2)
 }
 
 function memoSolution(num, cache) {
