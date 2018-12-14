@@ -2,7 +2,7 @@
 // R: 1 1 2 3 5 8 13 21 34 55...
 
 // O(n)
-function simpleSolution(num) {
+function iterativeSolution(num) {
   let a = 0,
     b = 1,
     aux
@@ -22,7 +22,7 @@ function recursiveSolution(num) {
   return num <= 1 ? 1 : recursiveSolution(num - 1) + recursiveSolution(num - 2)
 }
 
-function memoizationSolution(num, cache) {
+function memoSolution(num, cache) {
   cache = cache || {}
 
   if (num <= 1) return 1
@@ -31,7 +31,7 @@ function memoizationSolution(num, cache) {
   return memoizationSolution(num - 1, cache) + memoizationSolution(num - 2, cache)
 }
 
-function closureMemoizationSolution() {
+function closureMemoSolution() {
   let cache = {}
 
   return function fib(num) {
@@ -46,8 +46,9 @@ function closureMemoizationSolution() {
   }
 }
 
-const fibo = closureMemoizationSolution()
-
-for (let index = 0; index < 10; index++) {
-  console.log(simpleSolution(index))
+module.exports = {
+  iterativeSolution,
+  recursiveSolution,
+  memoSolution,
+  closureMemoSolution
 }
