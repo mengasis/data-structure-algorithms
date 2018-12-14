@@ -7,7 +7,7 @@ function iterativeSolution(num) {
     b = 1,
     aux
 
-  while (num >= 0) {
+  while (num > 0) {
     aux = a
     a = b
     b = aux + b
@@ -19,16 +19,16 @@ function iterativeSolution(num) {
 
 //O(2^n)
 function recursiveSolution(num) {
-  return num <= 1 ? 1 : recursiveSolution(num - 1) + recursiveSolution(num - 2)
+  return num < 1 ? num : recursiveSolution(num - 1) + recursiveSolution(num - 2)
 }
 
 function memoSolution(num, cache) {
   cache = cache || {}
 
-  if (num <= 1) return 1
+  if (num <= 1) return num
   if (cache[num]) return cache[num]
 
-  return memoizationSolution(num - 1, cache) + memoizationSolution(num - 2, cache)
+  return memoSolution(num - 1, cache) + memoSolution(num - 2, cache)
 }
 
 function closureMemoSolution() {
@@ -37,7 +37,7 @@ function closureMemoSolution() {
   return function fib(num) {
     if (cache[num]) return cache[num]
 
-    if (num <= 1) return 1
+    if (num <= 1) return num
 
     const result = fib(num - 1) + fib(num - 2)
     cache[num] = result
