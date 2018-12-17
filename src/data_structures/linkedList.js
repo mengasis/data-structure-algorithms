@@ -27,6 +27,40 @@ function createLinkedList() {
       this.tail.next = node
       this.tail = node
       this.length++
+    },
+    pop() {
+      if (this.isEmpty()) return null
+
+      const lastNode = this.tail
+
+      //When exist only one node
+      if (this.head === this.tail) {
+        this.tail = null
+        this.head = null
+        this.length--
+        return lastNode
+      }
+
+      let current = this.head
+      let penultimate
+
+      // It's get the penultimate value iterated from head until as next value is equal to tail
+      while (current) {
+        if (current.next === this.tail) {
+          penultimate = current
+          break
+        }
+
+        current = current.next
+      }
+
+      // It's nullify the next value of penultimate node
+      penultimate.next = null
+
+      // The penultimate node becomes the last
+      this.tail = penultimate
+      this.length--
+      return lastNode
     }
   }
 }
