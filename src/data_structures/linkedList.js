@@ -9,6 +9,12 @@ function createLinkedList() {
     length: 0,
     isEmpty() {
       return this.length === 0
+    },
+    push(value) {
+      const node = createNode(value)
+
+      this.tail = node
+      this.length++
     }
   }
 }
