@@ -104,8 +104,3 @@ function createLinkedList() {
     }
   }
 }
-
-let list = createLinkedList()
-list.push('Anthony')
-list.delete(0)
-console.assert(list.tail === null)
