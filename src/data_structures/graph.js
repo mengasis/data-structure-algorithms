@@ -34,6 +34,19 @@ function createGraph(directed = false) {
       if (!directed) {
         node2.addChildren(node1)
       }
+    },
+    print() {
+      return this.nodes
+        .map(({ children, key }) => {
+          let result = `${key}`
+
+          if (children.length) {
+            result += ` => ${children.map(node => node.key).join(' ')}`
+          }
+
+          return result
+        })
+        .join('\n')
     }
   }
 }
