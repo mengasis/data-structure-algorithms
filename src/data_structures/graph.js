@@ -29,7 +29,7 @@ function createGraph(directed = false) {
       const node2 = this.getNode(node2Key)
 
       node1.addChildren(node2)
-      edges.push(`${node1Key}${node2Key}`)
+      edges.push(`${node1Key}-${node2Key}`)
 
       if (!directed) {
         node2.addChildren(node1)
