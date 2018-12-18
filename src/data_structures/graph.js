@@ -50,3 +50,5 @@ function createGraph(directed = false) {
     }
   }
 }
+
+module.exports = { createGraph, createNode }
