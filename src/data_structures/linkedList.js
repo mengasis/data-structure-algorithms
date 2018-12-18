@@ -65,6 +65,7 @@ function createLinkedList() {
     get(index) {
       if (index === 0) return this.head
       if (index < 0 || index > this.length) return null
+      if (index === this.length - 1) return this.tail
 
       let current = this.head
 
@@ -73,6 +74,33 @@ function createLinkedList() {
       }
 
       return current
+    },
+    delete(index) {
+      if (index < 0 || index >= this.length) return null
+
+      if (index === this.length - 1) return this.tail
+
+      // When delete first node, the second node becomes to head
+      if (index === 0) {
+        const deletedNode = this.head
+        this.head = this.head.next
+        this.length--
+        return deletedNode
+      }
+
+      let current = this.head
+      let previous
+
+      for (let i = 0; i < index; i++) {
+        previous = current
+        current = current.next
+      }
+
+      const deletedNode = current
+      previous.next = current.next
+      this.length--
+
+      return deletedNode
     }
   }
 }
