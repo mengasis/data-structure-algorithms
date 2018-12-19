@@ -1,7 +1,7 @@
 const { createGraphBFS } = require('../src/data_structures/bfs')
 
-describe('', () => {
-  test('', () => {
+describe('Breadth First Search', () => {
+  test('Should search in the graph by BFS', () => {
     const graphExample = createGraphBFS(true)
     const nodes = ['a', 'b', 'c', 'd', 'e', 'f']
     const edges = [
