@@ -27,6 +27,9 @@ pipeline {
         }
 
         stage('Publish') {
+            when {
+                branch 'jenkins'
+            }
             steps {
                 script {
                     docker.withRegistry('', 'DockerHubCredentials') {
