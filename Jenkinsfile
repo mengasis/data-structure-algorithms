@@ -25,5 +25,15 @@ pipeline {
                 sh "docker run ${dockerImage.id} npm test"
             }
         }
+
+        stage('Publish') {
+            steps {
+                script {
+                    docker.withRegistry('', 'DockerHubCredentials') {
+                        dockerImage.push()
+                    }
+                }
+            }
+        }
     }
 }
